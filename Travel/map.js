@@ -17,15 +17,22 @@ document.body.appendChild(renderer.domElement)
 
 camera.position.z = 3;
 
+// Optionally adjust renderer settings
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 0.21;
 
 // Define orbit controls
 const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableDamping = true;                      //this is to smoothen the orbit control
+controls.enableDamping = true;                                       //this is to smoothen the orbit control
 
 // Load a texture for the globe and plane icon
 const textureLoader = new THREE.TextureLoader();
 const earthTexture = textureLoader.load('./image/earthTexture.jpg')
 const pinTexture = textureLoader.load('./image/plane.png')
+
+//load a background texture
+const backgroundTexture = textureLoader.load('./image/starry.png')
+scene.background = backgroundTexture;
 
 // Create globe
 const geometry = new THREE.SphereGeometry(1, 32, 32)
@@ -38,7 +45,7 @@ const earthMesh = new THREE.Mesh(geometry, material)
 scene.add(earthMesh)
 
 //create light
-const hemiLight = new THREE .HemisphereLight(0xFFFFFF, 0xFFFFFF, 3)
+const hemiLight = new THREE .HemisphereLight(0xFFFFFF, 0xFFFFFF, 3.8)
 scene.add(hemiLight)
 
 
@@ -59,7 +66,7 @@ function createTextSprite(text, color='fuchsia'){
     context.fillStyle = color;                              
     context.font = `49px 'Georgia'`
     context.textAlign = 'center';
-    context.textBaseline = 'middle';                                           // Ensure text is centered vertically
+    context.textBaseline = 'middle';                                          
     
     // draw text
     context.fillText(text, canvas.width / 2, canvas.height / 2)
@@ -82,6 +89,10 @@ function latLongToVector3(lat, lon, radius) {
 
     return new THREE.Vector3(x, y, z);
 }
+
+// Create a container for labels so they rotate together wiht the globe
+const markerLabelContainer = new THREE.Group();
+earthMesh.add(markerLabelContainer)                            // add container to the globe
 
 //Define an array of colors
 const colors = ['yellow','blue','fuchsia','#00FF7F','red','black', '#7CFC00']
@@ -108,7 +119,8 @@ function addPinWithLabel(lat, lon, label, index, radius = 1.01) {
     textSprite.position.y += 0.07;           // offset the label above the pin
     textSprite.position.x -= 0.03;   
 
-    scene.add(textSprite)
+    markerLabelContainer.add(pinSprite)            // add marker to the container
+    markerLabelContainer.add(textSprite)           // add label to the container
 
 }
 
@@ -127,8 +139,10 @@ fetch ('Travel_map_cvs.json')
 function animate() {
     requestAnimationFrame(animate);
 
-    controls.update();
+    // rotate the globe around the y-axis
+    earthMesh.rotation.y += 0.004;        
 
+    controls.update();
     renderer.render(scene, camera)
 
 }
