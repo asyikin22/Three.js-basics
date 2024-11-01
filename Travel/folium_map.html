@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1fc7cd1427e78ef99766335eb4e22cea {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/digidem/leaflet-side-by-side@2.0.0/leaflet-side-by-side.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_1fc7cd1427e78ef99766335eb4e22cea" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1fc7cd1427e78ef99766335eb4e22cea = L.map(
+                "map_1fc7cd1427e78ef99766335eb4e22cea",
+                {
+                    center: [0.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 3,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6c04a9d5f07d0c980394b60458cf17b9 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_6c04a9d5f07d0c980394b60458cf17b9.addTo(map_1fc7cd1427e78ef99766335eb4e22cea);
+        
+    
+            var marker_7d50375ea63b4257d6367fb40400aadd = L.marker(
+                [40.4093, 49.8671],
+                {}
+            ).addTo(map_1fc7cd1427e78ef99766335eb4e22cea);
+        
+    
+            var icon_ce71cc93949cb91aae6946f68e1e4144 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7d50375ea63b4257d6367fb40400aadd.setIcon(icon_ce71cc93949cb91aae6946f68e1e4144);
+        
+    
+        var popup_c4dd9ecc71b7644c382dd1c917979fd2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7e6a4a2d19b92aa5346790ce3d66af02 = $(`<div id="html_7e6a4a2d19b92aa5346790ce3d66af02" style="width: 100.0%; height: 100.0%;">      <div style="min-width: 250px; max-width: 300px; font-size: 14px;">          <strong>Country:</strong> Azerbaijan<br>         <strong>Capital:</strong> Baku<br>         <strong>Diversity:</strong> Low<br>         <strong>Safety:</strong> 4<br>         <strong>Hospitality:</strong> 3<br>         <strong>History:</strong> 2<br>         <strong>Will I return?:</strong> Yes<br>     </div>     </div>`)[0];
+                popup_c4dd9ecc71b7644c382dd1c917979fd2.setContent(html_7e6a4a2d19b92aa5346790ce3d66af02);
+            
+        
+
+        marker_7d50375ea63b4257d6367fb40400aadd.bindPopup(popup_c4dd9ecc71b7644c382dd1c917979fd2)
+        ;
+
+        
+    
+    
+            marker_7d50375ea63b4257d6367fb40400aadd.bindTooltip(
+                `<div>
+                     Click me!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_39309758b2a3666530a5dfc348addc80 = L.marker(
+                [47.4979, 19.0402],
+                {}
+            ).addTo(map_1fc7cd1427e78ef99766335eb4e22cea);
+        
+    
+            var icon_e59dcf4c4e79973206fde31491882d22 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_39309758b2a3666530a5dfc348addc80.setIcon(icon_e59dcf4c4e79973206fde31491882d22);
+        
+    
+        var popup_6ced913ad8076517c133fecb7059ea2c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_272ea2ec5df5171f057279c282d77c3b = $(`<div id="html_272ea2ec5df5171f057279c282d77c3b" style="width: 100.0%; height: 100.0%;">      <div style="min-width: 250px; max-width: 300px; font-size: 14px;">          <strong>Country:</strong> Hungary<br>         <strong>Capital:</strong> Budapest<br>         <strong>Diversity:</strong> Low<br>         <strong>Safety:</strong> 4<br>         <strong>Hospitality:</strong> 3<br>         <strong>History:</strong> 3<br>         <strong>Will I return?:</strong> Indifferent<br>     </div>     </div>`)[0];
+                popup_6ced913ad8076517c133fecb7059ea2c.setContent(html_272ea2ec5df5171f057279c282d77c3b);
+            
+        
+
+        marker_39309758b2a3666530a5dfc348addc80.bindPopup(popup_6ced913ad8076517c133fecb7059ea2c)
+        ;
+
+        
+    
+    
+            marker_39309758b2a3666530a5dfc348addc80.bindTooltip(
+                `<div>
+                     Click me!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_be11c767b13ec9fb8144bd1746806545 = L.marker(
+                [50.0755, 14.4378],
+                {}
+            ).addTo(map_1fc7cd1427e78ef99766335eb4e22cea);
+        
+    
+            var icon_96ab31a9256ce03347dcc45072a6f4dc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_be11c767b13ec9fb8144bd1746806545.setIcon(icon_96ab31a9256ce03347dcc45072a6f4dc);
+        
+    
+        var popup_be4efe688c1eb692190a1b53e6bf339d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2fc94203ac88084c55952693f9e33348 = $(`<div id="html_2fc94203ac88084c55952693f9e33348" style="width: 100.0%; height: 100.0%;">      <div style="min-width: 250px; max-width: 300px; font-size: 14px;">          <strong>Country:</strong> Czechia<br>         <strong>Capital:</strong> Prague<br>         <strong>Diversity:</strong> Low<br>         <strong>Safety:</strong> 3<br>         <strong>Hospitality:</strong> 1<br>         <strong>History:</strong> 3<br>         <strong>Will I return?:</strong> No<br>     </div>     </div>`)[0];
+                popup_be4efe688c1eb692190a1b53e6bf339d.setContent(html_2fc94203ac88084c55952693f9e33348);
+            
+        
+
+        marker_be11c767b13ec9fb8144bd1746806545.bindPopup(popup_be4efe688c1eb692190a1b53e6bf339d)
+        ;
+
+        
+    
+    
+            marker_be11c767b13ec9fb8144bd1746806545.bindTooltip(
+                `<div>
+                     Click me!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_751f4d61c573990b310da5fcca7ac49f = L.marker(
+                [46.9479, 7.4474],
+                {}
+            ).addTo(map_1fc7cd1427e78ef99766335eb4e22cea);
+        
+    
+            var icon_8fd68af4ded2e0a4948639081adca345 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_751f4d61c573990b310da5fcca7ac49f.setIcon(icon_8fd68af4ded2e0a4948639081adca345);
+        
+    
+        var popup_12820e417b0bd9fc21cbf66ad02a35bc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3076ae374a670c75bfe3eeeae4189583 = $(`<div id="html_3076ae374a670c75bfe3eeeae4189583" style="width: 100.0%; height: 100.0%;">      <div style="min-width: 250px; max-width: 300px; font-size: 14px;">          <strong>Country:</strong> Switzerland<br>         <strong>Capital:</strong> Bern<br>         <strong>Diversity:</strong> Low<br>         <strong>Safety:</strong> 4<br>         <strong>Hospitality:</strong> 4<br>         <strong>History:</strong> 2<br>         <strong>Will I return?:</strong> Yes<br>     </div>     </div>`)[0];
+                popup_12820e417b0bd9fc21cbf66ad02a35bc.setContent(html_3076ae374a670c75bfe3eeeae4189583);
+            
+        
+
+        marker_751f4d61c573990b310da5fcca7ac49f.bindPopup(popup_12820e417b0bd9fc21cbf66ad02a35bc)
+        ;
+
+        
+    
+    
+            marker_751f4d61c573990b310da5fcca7ac49f.bindTooltip(
+                `<div>
+                     Click me!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2e880888080f4dbb7fe70e0b41211f0f = L.marker(
+                [35.6892, 51.389],
+                {}
+            ).addTo(map_1fc7cd1427e78ef99766335eb4e22cea);
+        
+    
+            var icon_30337d6eabe5cee3f059fe54d9a7441b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_2e880888080f4dbb7fe70e0b41211f0f.setIcon(icon_30337d6eabe5cee3f059fe54d9a7441b);
+        
+    
+        var popup_700a57aa4e4649f9fc6d3ea3dea3a164 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_feae8ff05b2e82e04c51d824f006de04 = $(`<div id="html_feae8ff05b2e82e04c51d824f006de04" style="width: 100.0%; height: 100.0%;">      <div style="min-width: 250px; max-width: 300px; font-size: 14px;">          <strong>Country:</strong> Iran<br>         <strong>Capital:</strong> Tehran<br>         <strong>Diversity:</strong> Low<br>         <strong>Safety:</strong> 4<br>         <strong>Hospitality:</strong> 5<br>         <strong>History:</strong> 5<br>         <strong>Will I return?:</strong> Yes<br>     </div>     </div>`)[0];
+                popup_700a57aa4e4649f9fc6d3ea3dea3a164.setContent(html_feae8ff05b2e82e04c51d824f006de04);
+            
+        
+
+        marker_2e880888080f4dbb7fe70e0b41211f0f.bindPopup(popup_700a57aa4e4649f9fc6d3ea3dea3a164)
+        ;
+
+        
+    
+    
+            marker_2e880888080f4dbb7fe70e0b41211f0f.bindTooltip(
+                `<div>
+                     Click me!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b5bf5813065f863de6affaa9a71effdf = L.marker(
+                [24.4539, 54.3773],
+                {}
+            ).addTo(map_1fc7cd1427e78ef99766335eb4e22cea);
+        
+    
+            var icon_d957def8d495aa45fcc276f80336bd89 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_b5bf5813065f863de6affaa9a71effdf.setIcon(icon_d957def8d495aa45fcc276f80336bd89);
+        
+    
+        var popup_2594ec51241ea81a847762c917c849d2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6f3405b34a8b160b5dc4a805eee19cf0 = $(`<div id="html_6f3405b34a8b160b5dc4a805eee19cf0" style="width: 100.0%; height: 100.0%;">      <div style="min-width: 250px; max-width: 300px; font-size: 14px;">          <strong>Country:</strong> UAE<br>         <strong>Capital:</strong> Dubai<br>         <strong>Diversity:</strong> Medium<br>         <strong>Safety:</strong> 4<br>         <strong>Hospitality:</strong> 2<br>         <strong>History:</strong> 1<br>         <strong>Will I return?:</strong> No<br>     </div>     </div>`)[0];
+                popup_2594ec51241ea81a847762c917c849d2.setContent(html_6f3405b34a8b160b5dc4a805eee19cf0);
+            
+        
+
+        marker_b5bf5813065f863de6affaa9a71effdf.bindPopup(popup_2594ec51241ea81a847762c917c849d2)
+        ;
+
+        
+    
+    
+            marker_b5bf5813065f863de6affaa9a71effdf.bindTooltip(
+                `<div>
+                     Click me!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_00293e38f49e0ddeda037a993b4d2e53 = L.marker(
+                [41.0082, 28.9784],
+                {}
+            ).addTo(map_1fc7cd1427e78ef99766335eb4e22cea);
+        
+    
+            var icon_615d71efa2a8454bcbcd010668f915ff = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_00293e38f49e0ddeda037a993b4d2e53.setIcon(icon_615d71efa2a8454bcbcd010668f915ff);
+        
+    
+        var popup_f34855821fb24c67326af659acf80e04 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5a602cd1f68a63b55b1a165b03cb6c5e = $(`<div id="html_5a602cd1f68a63b55b1a165b03cb6c5e" style="width: 100.0%; height: 100.0%;">      <div style="min-width: 250px; max-width: 300px; font-size: 14px;">          <strong>Country:</strong> Turkey<br>         <strong>Capital:</strong> Istabul<br>         <strong>Diversity:</strong> Low<br>         <strong>Safety:</strong> 4<br>         <strong>Hospitality:</strong> 5<br>         <strong>History:</strong> 5<br>         <strong>Will I return?:</strong> Yes<br>     </div>     </div>`)[0];
+                popup_f34855821fb24c67326af659acf80e04.setContent(html_5a602cd1f68a63b55b1a165b03cb6c5e);
+            
+        
+
+        marker_00293e38f49e0ddeda037a993b4d2e53.bindPopup(popup_f34855821fb24c67326af659acf80e04)
+        ;
+
+        
+    
+    
+            marker_00293e38f49e0ddeda037a993b4d2e53.bindTooltip(
+                `<div>
+                     Click me!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ef79f000f122f0d8bc308a7d71eeaf85 = L.marker(
+                [-37.8136, 144.9631],
+                {}
+            ).addTo(map_1fc7cd1427e78ef99766335eb4e22cea);
+        
+    
+            var icon_540dad8b27fc3741b2b949a5add9ad39 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_ef79f000f122f0d8bc308a7d71eeaf85.setIcon(icon_540dad8b27fc3741b2b949a5add9ad39);
+        
+    
+        var popup_df55123ea54217ee5431d638dccd8a89 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a0a37ebf71b1b9c632700ce0fbdc365f = $(`<div id="html_a0a37ebf71b1b9c632700ce0fbdc365f" style="width: 100.0%; height: 100.0%;">      <div style="min-width: 250px; max-width: 300px; font-size: 14px;">          <strong>Country:</strong> Australia<br>         <strong>Capital:</strong> Melbourne<br>         <strong>Diversity:</strong> High<br>         <strong>Safety:</strong> 4<br>         <strong>Hospitality:</strong> 3<br>         <strong>History:</strong> 2<br>         <strong>Will I return?:</strong> Yes<br>     </div>     </div>`)[0];
+                popup_df55123ea54217ee5431d638dccd8a89.setContent(html_a0a37ebf71b1b9c632700ce0fbdc365f);
+            
+        
+
+        marker_ef79f000f122f0d8bc308a7d71eeaf85.bindPopup(popup_df55123ea54217ee5431d638dccd8a89)
+        ;
+
+        
+    
+    
+            marker_ef79f000f122f0d8bc308a7d71eeaf85.bindTooltip(
+                `<div>
+                     Click me!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_04da780fe25c32f127201641404ae970 = L.marker(
+                [8.5241, 76.9366],
+                {}
+            ).addTo(map_1fc7cd1427e78ef99766335eb4e22cea);
+        
+    
+            var icon_f392c77d5cc4ff77f142cca24826784e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_04da780fe25c32f127201641404ae970.setIcon(icon_f392c77d5cc4ff77f142cca24826784e);
+        
+    
+        var popup_7b08be51a43a61963fac5138e8542761 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3f2626aabda45033b93fbf79a4e8ec84 = $(`<div id="html_3f2626aabda45033b93fbf79a4e8ec84" style="width: 100.0%; height: 100.0%;">      <div style="min-width: 250px; max-width: 300px; font-size: 14px;">          <strong>Country:</strong> India<br>         <strong>Capital:</strong> Kerala<br>         <strong>Diversity:</strong> Low<br>         <strong>Safety:</strong> 2<br>         <strong>Hospitality:</strong> 3<br>         <strong>History:</strong> 1<br>         <strong>Will I return?:</strong> Indifferent<br>     </div>     </div>`)[0];
+                popup_7b08be51a43a61963fac5138e8542761.setContent(html_3f2626aabda45033b93fbf79a4e8ec84);
+            
+        
+
+        marker_04da780fe25c32f127201641404ae970.bindPopup(popup_7b08be51a43a61963fac5138e8542761)
+        ;
+
+        
+    
+    
+            marker_04da780fe25c32f127201641404ae970.bindTooltip(
+                `<div>
+                     Click me!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ef0aae458aba79ce707e756eb8e61720 = L.marker(
+                [1.3521, 103.8198],
+                {}
+            ).addTo(map_1fc7cd1427e78ef99766335eb4e22cea);
+        
+    
+            var icon_90b553cedde15b2c22c0d208693c35a5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_ef0aae458aba79ce707e756eb8e61720.setIcon(icon_90b553cedde15b2c22c0d208693c35a5);
+        
+    
+        var popup_8435d6d853efcf20e97107e2b7726088 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c3b81325d84831928c230f1a9ffd33b9 = $(`<div id="html_c3b81325d84831928c230f1a9ffd33b9" style="width: 100.0%; height: 100.0%;">      <div style="min-width: 250px; max-width: 300px; font-size: 14px;">          <strong>Country:</strong> Singapore<br>         <strong>Capital:</strong> Singapore<br>         <strong>Diversity:</strong> Medium<br>         <strong>Safety:</strong> 4<br>         <strong>Hospitality:</strong> 2<br>         <strong>History:</strong> 1<br>         <strong>Will I return?:</strong> Indifferent<br>     </div>     </div>`)[0];
+                popup_8435d6d853efcf20e97107e2b7726088.setContent(html_c3b81325d84831928c230f1a9ffd33b9);
+            
+        
+
+        marker_ef0aae458aba79ce707e756eb8e61720.bindPopup(popup_8435d6d853efcf20e97107e2b7726088)
+        ;
+
+        
+    
+    
+            marker_ef0aae458aba79ce707e756eb8e61720.bindTooltip(
+                `<div>
+                     Click me!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f00faa28065de3496461c6921ff9e82f = L.marker(
+                [-8.3405, 115.092],
+                {}
+            ).addTo(map_1fc7cd1427e78ef99766335eb4e22cea);
+        
+    
+            var icon_7f3e010a1b34ea76e87296e2f857b605 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f00faa28065de3496461c6921ff9e82f.setIcon(icon_7f3e010a1b34ea76e87296e2f857b605);
+        
+    
+        var popup_b555488cd998e6b724a82cb7d58cd703 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7e8980c418117cb7feac6407907d2de1 = $(`<div id="html_7e8980c418117cb7feac6407907d2de1" style="width: 100.0%; height: 100.0%;">      <div style="min-width: 250px; max-width: 300px; font-size: 14px;">          <strong>Country:</strong> Indonesia<br>         <strong>Capital:</strong> Denpasar<br>         <strong>Diversity:</strong> Low<br>         <strong>Safety:</strong> 4<br>         <strong>Hospitality:</strong> 5<br>         <strong>History:</strong> 1<br>         <strong>Will I return?:</strong> Yes<br>     </div>     </div>`)[0];
+                popup_b555488cd998e6b724a82cb7d58cd703.setContent(html_7e8980c418117cb7feac6407907d2de1);
+            
+        
+
+        marker_f00faa28065de3496461c6921ff9e82f.bindPopup(popup_b555488cd998e6b724a82cb7d58cd703)
+        ;
+
+        
+    
+    
+            marker_f00faa28065de3496461c6921ff9e82f.bindTooltip(
+                `<div>
+                     Click me!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_940196f066bd3f26c8c06c9bc62e1d81 = L.marker(
+                [13.7563, 100.5018],
+                {}
+            ).addTo(map_1fc7cd1427e78ef99766335eb4e22cea);
+        
+    
+            var icon_92f311342283be4bf39e81ae889448e0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_940196f066bd3f26c8c06c9bc62e1d81.setIcon(icon_92f311342283be4bf39e81ae889448e0);
+        
+    
+        var popup_c5c6e48119e2db44c5a4675ef897ff73 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dbe962ffeec65700c54f03e6daab4665 = $(`<div id="html_dbe962ffeec65700c54f03e6daab4665" style="width: 100.0%; height: 100.0%;">      <div style="min-width: 250px; max-width: 300px; font-size: 14px;">          <strong>Country:</strong> Thailand<br>         <strong>Capital:</strong> Bangkok<br>         <strong>Diversity:</strong> Low<br>         <strong>Safety:</strong> 4<br>         <strong>Hospitality:</strong> 4<br>         <strong>History:</strong> 1<br>         <strong>Will I return?:</strong> Yes<br>     </div>     </div>`)[0];
+                popup_c5c6e48119e2db44c5a4675ef897ff73.setContent(html_dbe962ffeec65700c54f03e6daab4665);
+            
+        
+
+        marker_940196f066bd3f26c8c06c9bc62e1d81.bindPopup(popup_c5c6e48119e2db44c5a4675ef897ff73)
+        ;
+
+        
+    
+    
+            marker_940196f066bd3f26c8c06c9bc62e1d81.bindTooltip(
+                `<div>
+                     Click me!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9e0423a5621b9f60896cae8676afde68 = L.marker(
+                [42.6977, 23.3219],
+                {}
+            ).addTo(map_1fc7cd1427e78ef99766335eb4e22cea);
+        
+    
+            var icon_2253949393965caeecbe9d5c981d1b5e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9e0423a5621b9f60896cae8676afde68.setIcon(icon_2253949393965caeecbe9d5c981d1b5e);
+        
+    
+        var popup_4d72e28cbc47e4d11b3acd556c3e28e6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b044ca2a85ebb30bccac93774a54e196 = $(`<div id="html_b044ca2a85ebb30bccac93774a54e196" style="width: 100.0%; height: 100.0%;">      <div style="min-width: 250px; max-width: 300px; font-size: 14px;">          <strong>Country:</strong> Bulgaria<br>         <strong>Capital:</strong> Sofia<br>         <strong>Diversity:</strong> Low<br>         <strong>Safety:</strong> 4<br>         <strong>Hospitality:</strong> 4<br>         <strong>History:</strong> 2<br>         <strong>Will I return?:</strong> No<br>     </div>     </div>`)[0];
+                popup_4d72e28cbc47e4d11b3acd556c3e28e6.setContent(html_b044ca2a85ebb30bccac93774a54e196);
+            
+        
+
+        marker_9e0423a5621b9f60896cae8676afde68.bindPopup(popup_4d72e28cbc47e4d11b3acd556c3e28e6)
+        ;
+
+        
+    
+    
+            marker_9e0423a5621b9f60896cae8676afde68.bindTooltip(
+                `<div>
+                     Click me!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1a994e7173778dcf9370061aeab6d3af = L.marker(
+                [44.4268, 26.1025],
+                {}
+            ).addTo(map_1fc7cd1427e78ef99766335eb4e22cea);
+        
+    
+            var icon_cb87c318ecd506aa47f98ca6cb1a032f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_1a994e7173778dcf9370061aeab6d3af.setIcon(icon_cb87c318ecd506aa47f98ca6cb1a032f);
+        
+    
+        var popup_7c4fcfe6bd0eeb009840f134f3da3e3f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_df0430c72fc89c1f64e697acd53865db = $(`<div id="html_df0430c72fc89c1f64e697acd53865db" style="width: 100.0%; height: 100.0%;">      <div style="min-width: 250px; max-width: 300px; font-size: 14px;">          <strong>Country:</strong> Romania<br>         <strong>Capital:</strong> Bucharest<br>         <strong>Diversity:</strong> Low<br>         <strong>Safety:</strong> 2<br>         <strong>Hospitality:</strong> 3<br>         <strong>History:</strong> 2<br>         <strong>Will I return?:</strong> No<br>     </div>     </div>`)[0];
+                popup_7c4fcfe6bd0eeb009840f134f3da3e3f.setContent(html_df0430c72fc89c1f64e697acd53865db);
+            
+        
+
+        marker_1a994e7173778dcf9370061aeab6d3af.bindPopup(popup_7c4fcfe6bd0eeb009840f134f3da3e3f)
+        ;
+
+        
+    
+    
+            marker_1a994e7173778dcf9370061aeab6d3af.bindTooltip(
+                `<div>
+                     Click me!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_86ed304348ac4ea61022de25dd45a13d = L.marker(
+                [52.52, 13.405],
+                {}
+            ).addTo(map_1fc7cd1427e78ef99766335eb4e22cea);
+        
+    
+            var icon_4a5d5ccb1b6264f3c4e542bdfe9a52df = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_86ed304348ac4ea61022de25dd45a13d.setIcon(icon_4a5d5ccb1b6264f3c4e542bdfe9a52df);
+        
+    
+        var popup_05f36e572e0cd2be2312b885aa09c140 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_023b561d292df24d8fa1c6959440aca2 = $(`<div id="html_023b561d292df24d8fa1c6959440aca2" style="width: 100.0%; height: 100.0%;">      <div style="min-width: 250px; max-width: 300px; font-size: 14px;">          <strong>Country:</strong> Germany<br>         <strong>Capital:</strong> Berlin<br>         <strong>Diversity:</strong> Low<br>         <strong>Safety:</strong> 4<br>         <strong>Hospitality:</strong> 1<br>         <strong>History:</strong> 4<br>         <strong>Will I return?:</strong> No<br>     </div>     </div>`)[0];
+                popup_05f36e572e0cd2be2312b885aa09c140.setContent(html_023b561d292df24d8fa1c6959440aca2);
+            
+        
+
+        marker_86ed304348ac4ea61022de25dd45a13d.bindPopup(popup_05f36e572e0cd2be2312b885aa09c140)
+        ;
+
+        
+    
+    
+            marker_86ed304348ac4ea61022de25dd45a13d.bindTooltip(
+                `<div>
+                     Click me!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b951dc2f3b3144d6d81c47d0cebedf7c = L.marker(
+                [48.8566, 2.3522],
+                {}
+            ).addTo(map_1fc7cd1427e78ef99766335eb4e22cea);
+        
+    
+            var icon_4220b33efc15fab7bb7658abdd953393 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_b951dc2f3b3144d6d81c47d0cebedf7c.setIcon(icon_4220b33efc15fab7bb7658abdd953393);
+        
+    
+        var popup_370f743f5971f0fbb04f3c6d7c55ba6f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_937c8658316d690d05ae615d47621206 = $(`<div id="html_937c8658316d690d05ae615d47621206" style="width: 100.0%; height: 100.0%;">      <div style="min-width: 250px; max-width: 300px; font-size: 14px;">          <strong>Country:</strong> France<br>         <strong>Capital:</strong> Paris<br>         <strong>Diversity:</strong> High<br>         <strong>Safety:</strong> 4<br>         <strong>Hospitality:</strong> 3<br>         <strong>History:</strong> 5<br>         <strong>Will I return?:</strong> Yes<br>     </div>     </div>`)[0];
+                popup_370f743f5971f0fbb04f3c6d7c55ba6f.setContent(html_937c8658316d690d05ae615d47621206);
+            
+        
+
+        marker_b951dc2f3b3144d6d81c47d0cebedf7c.bindPopup(popup_370f743f5971f0fbb04f3c6d7c55ba6f)
+        ;
+
+        
+    
+    
+            marker_b951dc2f3b3144d6d81c47d0cebedf7c.bindTooltip(
+                `<div>
+                     Click me!
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var tile_layer_262f688a9b4e94f867a2165e2b78919a = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_262f688a9b4e94f867a2165e2b78919a.addTo(map_1fc7cd1427e78ef99766335eb4e22cea);
+        
+    
+            var tile_layer_82d467de7616ac83273386a6be38e63c = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_82d467de7616ac83273386a6be38e63c.addTo(map_1fc7cd1427e78ef99766335eb4e22cea);
+        
+    
+            var side_by_side_layers_7fe96ff77f2d05500813b28790ab17f1 = L.control.sideBySide(
+                tile_layer_262f688a9b4e94f867a2165e2b78919a, tile_layer_82d467de7616ac83273386a6be38e63c
+            ).addTo(map_1fc7cd1427e78ef99766335eb4e22cea);
+        
+    
+            var mouse_position_dc14541c6d158ccc3112518f5a210c65 = new L.Control.MousePosition(
+                {"emptyString": "NaN", "lngFirst": true, "numDigits": 20, "position": "topright", "prefix": "Coordinates:", "separator": " | "}
+            );
+            mouse_position_dc14541c6d158ccc3112518f5a210c65.options["latFormatter"] =
+                function(num) {return L.Util.formatNum(num, 3) + ' &deg; ';};;
+            mouse_position_dc14541c6d158ccc3112518f5a210c65.options["lngFormatter"] =
+                function(num) {return L.Util.formatNum(num, 3) + ' &deg; ';};;
+            map_1fc7cd1427e78ef99766335eb4e22cea.addControl(mouse_position_dc14541c6d158ccc3112518f5a210c65);
+        
+    
+            map_1fc7cd1427e78ef99766335eb4e22cea.fitBounds(
+                [[-37.8136, 2.3522], [52.52, 144.9631]],
+                {}
+            );
+        
+</script>
+</html>

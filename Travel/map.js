@@ -8,14 +8,17 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'jsm/controls/OrbitControls.js'
 
+//select globe container in html
+const globeContainer = document.getElementById('globe_container')
+
 //create a basic scene
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(40, window.innerWidth/window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(40, globeContainer.clientWidth/globeContainer.clientHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer()
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement)
+renderer.setSize(globeContainer.clientWidth, globeContainer.clientHeight);
+globeContainer.appendChild(renderer.domElement)
 
-camera.position.z = 3;
+camera.position.z = 4;
 
 // Optionally adjust renderer settings
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -24,6 +27,9 @@ renderer.toneMappingExposure = 0.21;
 // Define orbit controls
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;                                       //this is to smoothen the orbit control
+controls.minDistance = 1.5;
+controls.maxDistance = 5;
+
 
 // Load a texture for the globe and plane icon
 const textureLoader = new THREE.TextureLoader();
