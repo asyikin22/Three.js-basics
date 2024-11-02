@@ -8,21 +8,23 @@ body {
     flex-direction: column;
     height: 100vh;
     background-color: #222;
+    overflow: hidden;
 }
 h1 {
     color: white;
     text-align: center;
+    padding-left: 50px;
+    font-size: 40px;
 }
 nav {
     display: flex;
-    align-items: center;
 }
 header {
-    background-color: #333;
+    background-color: #625b5b;
     padding: 10px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-around;
 }
 .dropdown {
     position: relative;
@@ -31,6 +33,7 @@ header {
 }
 .dropbtn {
     background-color: #444;
+    font-size: 15px;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -44,9 +47,8 @@ header {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #444;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    background-color: rgba(68, 68, 68, 0.7);
+    min-width: 130px;
     z-index: 1;
     border-radius: 5px;
 }
@@ -70,7 +72,6 @@ header {
 }
 #globe_container {
     flex: 1;
-    height: 100%;
     background-color: #000;
     position: relative;
 }
@@ -84,4 +85,46 @@ header {
     flex: 1;
     border: none;
     height: 50%;
+}
+#globe_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(./image/starry.png);
+    max-height: 85vh;
+}
+.flag-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 15vh;
+    padding-top: 15px;
+}
+.flag-row {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    gap: 15px;
+}
+.flag-row img {
+    border-radius: 5px;
+}
+.tooltip {
+    visibility: hidden;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: left;
+    padding: 12px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+.flag-item:hover + .tooltip {
+    visibility: visible;
+    opacity: 1;
 }
