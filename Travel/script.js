@@ -16,23 +16,28 @@ document.querySelectorAll('.dropdown').forEach(dropdown => {
 
 //tooltop functionality
 
+let tooltipTimeout;
 const tooltip = document.getElementById('country-tooltip');
+let currentFlag = null;
 
 document.querySelectorAll('.flag-item').forEach(flag => {
-    flag.addEventListener('mouseenter', handleMouseEnter);
-    flag.addEventListener('mouseleave', handleMouseLeave);
-    })
+    flag.addEventListener('click', handleClick);
+})
 
-async function handleMouseEnter(event) {
+//function to handle click on flags
+async function handleClick(event) {
     const flag = event.currentTarget;
-    const country = flag.getAttribute('data-country');
-    const wikiPage = flag.getAttribute('data-wiki')
 
+    if(currentFlag === flag) {
+        hideToolTip();
+        return
+    }
+
+    currentFlag = flag;
+    const wikiPage = flag.getAttribute('data-wiki')
+   
     //reset tooltip content
     tooltip.querySelector('.summary').textContent = "Loading summary...";
-    tooltip.querySelector('.capital').textContent = "";
-    tooltip.querySelector('.population').textContent = "";
-    tooltip.querySelector('.language').textContent = "";
     tooltip.querySelector('.wiki-link').href = "";
 
     try {
@@ -41,18 +46,18 @@ async function handleMouseEnter(event) {
 
         if(data.extract) {
             tooltip.querySelector('.summary').textContent = data.extract;
-            tooltip.querySelector('.capital').textContent = data?.properties?.capital || "N/A";
-            tooltip.querySelector('.population').textContent = data?.properties?.population || "N/A";
-            tooltip.querySelector('.language').textContent = data?.properties?.language || "N/A";
             tooltip.querySelector('.wiki-link').href = data.content_urls.desktop.page;
         } else {
             tooltip.querySelector('.summary').textContent = "Summary not available"
         }
 
-        //position the tooltip above the flag
-        const flagRect = flag.getBoundingClientRect();
-        tooltip.style.left = `${flagRect.left + window.scrollX}px`;
-        tooltip.style.top = `${flagRect.top + window.scrollY - tooltip.offsetHeight}px`
+        //position the tooltip below the flag
+        const containerRect = document.getElementById('globe_container').getBoundingClientRect();
+        const tooltipWidth = tooltip.offsetWidth;
+        const tooltipHeight = tooltip.offsetHeight;
+
+        tooltip.style.left = `${containerRect.left + window.scrollX + (containerRect.width / 2) - (tooltipWidth / 2)}px`;
+        tooltip.style.top = `${containerRect.top + window.scrollY + (containerRect.height / 2) - (tooltipHeight / 2)}px`
 
         tooltip.style.visibility = 'visible';
         tooltip.style.opacity = '1';
@@ -62,7 +67,15 @@ async function handleMouseEnter(event) {
     }
 }
 
-function handleMouseLeave() {
+function hideToolTip() {
     tooltip.style.visibility = 'hidden';
     tooltip.style.opacity = '0';
+    currentFlag = null;
 }
+
+//click event to hide tooltip when clicking outside
+document.addEventListener('click', function(event) {
+    if(!tooltip.contains(event.target) && !currentFlag.contains(event.target)) {
+        hideToolTip();
+    }
+});
