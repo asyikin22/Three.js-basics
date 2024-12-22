@@ -14,11 +14,11 @@ const globeContainer = document.getElementById('globe_container')
 //create a basic scene
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(40, globeContainer.clientWidth/globeContainer.clientHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer()
+const renderer = new THREE.WebGLRenderer({ antialias: true })
 renderer.setSize(globeContainer.clientWidth, globeContainer.clientHeight);
 globeContainer.appendChild(renderer.domElement)
 
-camera.position.z = 4;
+camera.position.z = 3.5;
 
 // Optionally adjust renderer settings
 renderer.toneMapping = THREE.ACESFilmicToneMapping;

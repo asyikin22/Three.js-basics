@@ -1,6 +1,5 @@
 * {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 body {
@@ -11,10 +10,9 @@ body {
     overflow: hidden;
 }
 h1 {
-    color: white;
+    color: gold;
     text-align: center;
-    padding-left: 100px;
-    font-size: 40px;
+    font-size: 3rem;
 }
 nav {
     display: flex;
@@ -33,7 +31,7 @@ header {
 }
 .dropbtn {
     background-color: #444;
-    font-size: 15px;
+    font-size: 0.85rem;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -70,28 +68,25 @@ header {
     flex: 1;
     width: 100%;
 }
-#globe_container {
-    flex: 1;
-    background-color: #000;
-    position: relative;
-}
 #map_and_ratings {
     display: flex;
     flex-direction: column;
     flex: 1;
-    height: 100%;
 }
-#folium_map, #chart {
-    flex: 1;
+#folium_map{
+    flex: 0.45;
     border: none;
-    height: 50%;
+}
+#chart {
+    flex: 0.55;
+    border: none;
 }
 #globe_container {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-image: url(./image/starry.png);
-    max-height: 85vh;
+    max-height: 70vh;
 }
 .flag-container {
     display: flex;
@@ -110,16 +105,16 @@ header {
 }
 .tooltip {
     visibility: hidden;
-    width: 650px;
+    width: 450px;
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
-    text-align: left;
     padding: 12px;
     border-radius: 10px;
     position: absolute;
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 1;
+    margin-top: 120px;
 }
 .flag-item:hover + .tooltip {
     visibility: visible;
@@ -127,12 +122,29 @@ header {
 }
 .tooltip .summary {
     text-align: justify;
-    font-size: 20px;
+    font-size: 0.8rem;
     line-height: 1.5;
 }
 .wiki-link {
     color: white;
+    font-size: 0.8rem;
 }
 .wiki-link:hover {
     color: #ffcc00;
+}
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 1.8rem;  /* Adjust the size as needed */
+    }
+    .dropbtn {
+        font-size: 0.7rem;
+    }
+    .dropdown-content {
+        font-size: 0.7rem;
+        min-width: 100px;
+    }
+    #globe_container {
+        max-height: 75vh;
+    }
 }
