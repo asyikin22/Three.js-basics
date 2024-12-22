@@ -1,0 +1,21 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Trigger action when code is pushed to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages  # The branch GitHub Pages uses
+          folder: Travel    # The folder you want to deploy (this is your "Travel" folder)
+          token: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authorization
