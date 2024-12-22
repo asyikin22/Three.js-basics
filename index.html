@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type='importmap'>
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+                "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>My Travelogue</h1>
+        <nav>
+            <div class="dropdown">
+                <button class="dropbtn">Money Card</button>
+                <div class="dropdown-content">
+                    <a href="https://wise.com/" target="_blank">Wise</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">Accommodation</button>
+                <div class="dropdown-content">
+                    <a href="https://www.airbnb.com/" target="_blank">Airbnb</a>
+                    <a href="https://www.agoda.com/?cid=1922888&tag=63226919-dc13-4c22-ac52-6a9ad1a7a24b&gclid=CjwKCAjw-JG5BhBZEiwAt7JR62KJ3EFYUee1RaTEXYDzEF5knJNckgUy0TcjOZtpU9eiGX3Rle7mIBoCii8QAvD_BwE&ds=q%2FX3%2BGoj7CkN71so" target="_blank">Agoda</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">Airways</button>
+                <div class="dropdown-content">
+                    <a href="https://www.airasia.com/en/gb?utm_content=brand&gad_source=1&gclid=CjwKCAjw-JG5BhBZEiwAt7JR61LkVWZTXRGDcgN_EZXFKd5smcel0L1SvDIvnIwh072QhM8v84yewBoC7bUQAvD_BwE&gclsrc=aw.ds" target="_blank">Air Asia</a>
+                    <a href="https://www.qantas.com/au/en.html" target="_blank">Qantas</a>
+                    <a href="https://www.qatarairways.com/en-my/homepage.html?CID=SXMY23456857M&account=Google-SEA_SASC-MY-EN-Brand&campaign=MY-Brand+Qatar-EN_exact&adgroup=Brand+EN+TM&term=qatar&&&&&gad_source=1&gclid=CjwKCAjw-JG5BhBZEiwAt7JR60abAS15Gp3CHyBoEc8oxQw0UghGUl-5F0A6ZyuYQnYH4XwNsmYQ1hoC_9oQAvD_BwE&gclsrc=aw.ds" target="_blank">Qatar Airways</a>
+                    <a href="https://www.virgin.com/" target="_blank">Virgin</a>
+                    <a href="https://www.goindigo.in/" target="_blank">IndiGo</a>
+                    <a href="https://www.flydubai.com/en-my/" target="_blank">flydubai</a>
+                    <a href="https://www.airarabia.com/en?_gl=1*ce29oh*_ga*MTA2NDMyMTMuMTczMDQ3MzM1NA..*_ga_MSWB891955*MTczMDQ3MzM1My4xLjAuMTczMDQ3MzM1My4wLjAuMA..*_gcl_au*MTEyNzAxMDE0NS4xNzMwNDczMzUy*_ga_JC9GXQB3J9*MTczMDQ3MzM1My4xLjAuMTczMDQ3MzM1My42MC4wLjA." target="_blank">Air Arabia</a>
+                    <!-- <a href="" target="_blank">flydubai</a> -->
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">Train</button>
+                <div class="dropdown-content">
+                    <a href="https://www.eurail.com/en/?gclsrc=aw.ds&&utm_source=google&gad_source=1&utm_medium=cpc&utm_campaign=ER_ROW_EN_DO_Paid-Search_Brand-AlwaysOn&utm_id=20891610120&utm_accountid=default_accountid&utm_accounttype=default_accounttype&gclid=CjwKCAjw-JG5BhBZEiwAt7JR60voXblFAON4jJG1UTmg2_4M_O6EH3LgSYqPwZBOIXwVsBDJvxemExoCCLcQAvD_BwE&gclsrc=aw.ds" target="_blank">Eurail</a>
+                    <a href="https://12go.asia/en/operator/thai-railways" target="_blank">Thai Railways</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">Tour & Activity</button>
+                <div class="dropdown-content">
+                    <a href="https://www.guruwalk.com/?ref=wsx1xymxspth05suq3y3&ref_campaign=17762891198__brand__en_brand_144664202331_pf00&ref=wsx1xymxspth05suq3y3&pf=pf00&gad_source=1&gclid=CjwKCAjw-JG5BhBZEiwAt7JR6xGF1U6VuSxFnk7Ra80VQh-TAadLCuJL3JrCDpIX2DVNPz_gsxc4xxoC5ccQAvD_BwE" target="_blank">Guruwalk</a>
+                    <a href="https://www.klook.com/?aid=31298&aff_adid=729376&aff_pid=&aff_sid=&utm_medium=affiliate-alwayson&utm_source=network&utm_campaign=31298&utm_term=&utm_content=&aff_klick_id=80322846081-31298-729376-1dd4437&gad_source=1" target="_blank">Klook</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">Rideshare</button>
+                <div class="dropdown-content">
+                    <a href="https://www.grab.com/sg/" target="_blank">Grab (Thailand)</a>
+                    <a href="https://www.gojek.com/en-id" target="_blank">Gojek (Indonesia)</a>
+                    <a href="https://www.uber.com/" target="_blank">Uber (Germany)</a>
+                    <a href=https://play.google.com/store/apps/details?id=com.bitaksi.musteri&hl=ms" target="_blank">Bitaksi (Turkey)</a>
+                    <a href="https://taxime.to/" target="_blank">Taxime (Bulgaria)</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">Reddit</button>
+                <div class="dropdown-content">
+                    <a href="https://www.reddit.com/r/travel/" target="_blank">r/travel</a>
+                    <a href="https://www.reddit.com/r/Europetravel/" target="_blank">r/europetravel</a>
+                    <a href="https://www.reddit.com/r/Interrail/" target="_blank">r/interrail</a>
+                    <a href="https://www.reddit.com/r/solotravel/" target="_blank">r/solotravel</a>
+                    <a href="https://www.reddit.com/r/onebag/" target="_blank">r/onebag</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="container">
+        <div id="globe_container">
+            <div class="flag-container"></div>
+                <div class="flag-row">
+                    <a href="#" class="flag-item" data-country="Azerbaijan" data-wiki="Azerbaijan">
+                        <img src="./image/flags/az.png" width="55" height="35" alt="Azerbaijan"></a>
+                    <a href="#" class="flag-item" data-country="Hungary" data-wiki="Hungary">
+                        <img src="./image/flags/hu.png" width="55" height="35" alt="Hungary"></a>
+                    <a href="#" class="flag-item" data-country="Czechia" data-wiki="Czechia">
+                        <img src="./image/flags/cz.png" width="55" height="35" alt="Czechia"></a>
+                    <a href="#" class="flag-item" data-country="Switzerland" data-wiki="Switzerland">
+                        <img src="./image/flags/swiss.png" width="52" height="35" alt="Switzerland"></a>
+                    <a href="#" class="flag-item" data-country="Islamic Republic of Iran" data-wiki="Islamic Republic of Iran">
+                        <img src="./image/flags/ir.png" width="55" height="35" alt="Iran"></a>
+                    <a href="#" class="flag-item" data-country="United Arab Emirates" data-wiki="United Arab Emirates">
+                        <img src="./image/flags/UAE.png" width="55" height="35" alt="UAE"></a>
+                    <a href="#" class="flag-item" data-country="Turkiye" data-wiki="Turkiye">
+                        <img src="./image/flags/tr.png" width="55" height="35" alt="Turkiye"></a>
+                    <a href="#" class="flag-item" data-country="Australia" data-wiki="Australia">
+                        <img src="./image/flags/au.png" width="55" height="35" alt="Australia"></a>
+                </div>
+
+                <div class="flag-row">
+                    <a href="#" class="flag-item" data-country="India" data-wiki="India">
+                        <img src="./image/flags/in.png" width="55" height="35" alt="India"></a>
+                    <a href="#" class="flag-item" data-country="Singapore" data-wiki="Singapore">
+                        <img src="./image/flags/sg.png" width="55" height="35" alt="Singapore"></a>
+                    <a href="#" class="flag-item" data-country="Indonesia" data-wiki="Indonesia">
+                        <img src="./image/flags/id.png" width="55" height="35" alt="Indonesia"></a>
+                    <a href="#" class="flag-item" data-country="Thailand" data-wiki="Thailand">
+                        <img src="./image/flags/th.png" width="50" alt="Thailand"></a>
+                    <a href="#" class="flag-item" data-country="Bulgaria" data-wiki="Bulgaria">
+                        <img src="./image/flags/bg.png" width="55" alt="Bulgaria"></a>
+                    <a href="#" class="flag-item" data-country="Romania" data-wiki="Romania">
+                        <img src="./image/flags/ro.png" width="55", height="34"alt="Romania"></a>
+                    <a href="#" class="flag-item" data-country="Germany" data-wiki="Germany">
+                        <img src="./image/flags/de.png" width="55", height="34" alt="Germany"></a>
+                    <a href="#" class="flag-item" data-country="France" data-wiki="France">
+                        <img src="./image/flags/fr.png" width="55" height="32" alt="France"></a>
+                </div>
+        </div>
+
+        <div class="tooltip" id="country-tooltip">
+            <div class="tooltip-content">
+                <p class="summary">Loading summary...</p><br>
+                <a class="wiki-link" href="" target="_blank">Read more on Wikipedia</a>
+            </div>
+        </div>
+
+        <div id="map_and_ratings">
+            <iframe id="folium_map" src="./folium_map.html" frameborder="0"></iframe>
+            <iframe id="chart" src="./country_ratings_overview.html" frameborder="0"></iframe>
+        </div>
+    </div>
+    
+    <script type="module" src="map.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+Region,Countries,Capital_city,Latitude,Longitude,Diversity,Safety,Hospitality,History,Nature,Return
+Caucasia,Azerbaijan,Baku,40.4093,49.8671,Low,3,2,2,4,Yes
+Central Europe,Hungary,Budapest,47.4979,19.0402,Low,4,2,3,4,Yes
+Central Europe,Czech Republic,Prague,50.0755,14.4378,Low,3,1,3,3,No
+Central Europe,Switzerland,Bern,46.9479,7.4474,Low,4,3,2,5,Yes
+Middle East,Iran,Tehran,35.6892,51.389,Low,4,5,3,5,Yes
+Middle East,United Arab Emirates,Dubai,24.4539,54.3773,Medium,4,2,1,1,No
+Middle East,Turkey,Istabul,41.0082,28.9784,Low,4,5,3,3,Yes
+Oceania,Australia,Melbourne,-37.8136,144.9631,High,4,3,2,5,Yes
+South Asia,India,Kerala,8.5241,76.9366,Low,2,5,2,3,Undecided
+Southeast Asia,Singapore,Singapore,1.3521,103.8198,Medium,5,2,1,3,Undecided
+Southeast Asia,Indonesia,Denpasar,-8.3405,115.092,Low,4,5,1,4,Yes
+Southeast Asia,Thailand,Bangkok,13.7563,100.5018,Low,4,3,1,5,Yes
+Southeast Europe,Bulgaria,Sofia,42.6977,23.3219,Low,4,4,2,4,No
+Southeast Europe,Romania,Bucharest,44.4268,26.1025,Low,2,2,2,3,No
+Western Europe,Germany,Berlin,52.52,13.405,Low,3,1,5,3,No
+Western Europe,France,Paris,48.8566,2.3522,High,4,2,5,4,Yes
